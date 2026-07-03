@@ -99,6 +99,11 @@ body {
   color: var(--text-secondary);
 }
 
+/* ─── Main (flex: 1 para que absorba el espacio sobrante antes del footer) ─── */
+main {
+  flex: 1;
+}
+
 /* ─── Sección búsqueda ─────────────────────────────────────────────────────── */
 .seccion-busqueda {
   background-color: var(--bg-white);
