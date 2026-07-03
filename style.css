@@ -93,13 +93,6 @@ body {
   display: block;
 }
 
-.header-nombre {
-  font-size: var(--text-h4);
-  font-weight: var(--font-weight-medium);
-  color: var(--text-primary);
-  line-height: 1;
-}
-
 .header-tagline {
   font-size: var(--text-nav);
   font-weight: var(--font-weight-light);
