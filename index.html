@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SazónIA — Recetas peruanas con lo que tienes</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ─── Header ─────────────────────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="header-brand" aria-label="SazónIA inicio">
+        <img src="assets/sazonia-logo.svg" alt="Logo SazónIA" class="header-logo" />
+        <span class="header-nombre">SazónIA</span>
+      </a>
+      <p class="header-tagline">Cocina peruano con lo que ya tienes en casa</p>
+    </div>
+  </header>
+
+  <!-- ─── Sección hero + formulario ──────────────────────────────────────── -->
+  <main>
+    <section class="seccion-busqueda">
+      <div class="container">
+        <h1 class="busqueda-titulo">¿Qué tienes en tu cocina?</h1>
+        <p class="busqueda-subtitulo">Escribe los ingredientes que tienes y te recomendamos la mejor receta de almuerzo peruano.</p>
+
+        <form id="form-ingredientes" class="form-busqueda" novalidate>
+          <label for="input-ingredientes" class="form-label">Tus ingredientes</label>
+          <div class="form-fila">
+            <input
+              type="text"
+              id="input-ingredientes"
+              name="ingredientes"
+              class="form-input"
+              placeholder="Ej: pollo, arroz, cebolla, ajo"
+              required
+              autocomplete="off"
+              aria-label="Escribe tus ingredientes separados por coma"
+            />
+            <button type="submit" class="btn-primario">Buscar recetas</button>
+          </div>
+          <p class="form-hint">Separa cada ingrediente con una coma.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ─── Sección de resultados ──────────────────────────────────────── -->
+    <section class="seccion-resultados" aria-live="polite">
+      <div class="container">
+        <div id="resultados" class="resultados-grid">
+          <!-- Las tarjetas se inyectan aquí por JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ─── Footer ─────────────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-texto">SazónIA · MVP académico · 2025</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
