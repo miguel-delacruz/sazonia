@@ -164,7 +164,7 @@ function renderFavoritos() {
   cont.innerHTML = "";
 
   if (favoritos.length === 0) {
-    cont.innerHTML = `<p class="mensaje">Aún no tienes recetas favoritas — dale clic a la estrella en cualquier receta.</p>`;
+    cont.innerHTML = `<p class="mensaje">Aún no tienes recetas favoritas. Dale clic a la estrella en cualquier receta.</p>`;
     return;
   }
 
@@ -173,7 +173,7 @@ function renderFavoritos() {
     .filter(Boolean);
 
   if (encontrados.length === 0) {
-    cont.innerHTML = `<p class="mensaje">Aún no tienes recetas favoritas — dale clic a la estrella en cualquier receta.</p>`;
+    cont.innerHTML = `<p class="mensaje">Aún no tienes recetas favoritas. Dale clic a la estrella en cualquier receta.</p>`;
     return;
   }
 
