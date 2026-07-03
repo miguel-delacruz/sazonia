@@ -87,7 +87,7 @@ function mostrarResultados(resultados) {
       </div>
       <p class="match">${pct}% de coincidencia</p>
       <p class="faltantes">${mensajeFaltantes}</p>
-      <p class="tiempo">⏱ ${receta.tiempo_min} min · 🍽 ${receta.porciones} porciones · 📊 ${receta.dificultad}</p>
+      <p class="tiempo">⏱ ${receta.tiempo_min} min · 🍽 ${receta.porciones} porciones · ${receta.dificultad}</p>
       <p class="card-cta">Ver receta completa →</p>
     `;
     const botonFav = crearBotonFavorito(receta);
@@ -187,7 +187,7 @@ function renderFavoritos() {
       <div class="receta-card-cabecera">
         <h3>${receta.nombre}</h3>
       </div>
-      <p class="tiempo">⏱ ${receta.tiempo_min} min · 🍽 ${receta.porciones} porciones · 📊 ${receta.dificultad}</p>
+      <p class="tiempo">⏱ ${receta.tiempo_min} min · 🍽 ${receta.porciones} porciones · ${receta.dificultad}</p>
       <p class="card-cta">Ver receta completa →</p>
     `;
     const botonFav = crearBotonFavorito(receta);
@@ -252,7 +252,7 @@ function abrirModal(receta, coincidencias, faltantes) {
 
   document.getElementById("modal-nombre").textContent = receta.nombre;
   document.getElementById("modal-meta").textContent =
-    `⏱ ${receta.tiempo_min} min · 🍽 ${receta.porciones} porciones · 📊 ${receta.dificultad}`;
+    `⏱ ${receta.tiempo_min} min · 🍽 ${receta.porciones} porciones · ${receta.dificultad}`;
   document.getElementById("modal-ingredientes").innerHTML = ingredientesHTML;
   document.getElementById("modal-pasos").innerHTML = pasosHTML;
 
