@@ -56,6 +56,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 /* ─── Contenedor centrado ──────────────────────────────────────────────────── */
@@ -285,6 +286,19 @@ main {
   font-weight: var(--font-weight-light);
   color: var(--color-white);
   opacity: 0.6;
+}
+
+/* ─── Responsive — móvil pequeño (< 480px) ────────────────────────────────── */
+@media (max-width: 479px) {
+  .form-fila {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-input,
+  .btn-primario {
+    width: 100%;
+  }
 }
 
 /* ─── Responsive — tablet (≥ 640px) ───────────────────────────────────────── */
