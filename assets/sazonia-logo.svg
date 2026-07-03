@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 260">
+  <defs>
+    <style>
+      .icon { fill: #000; }
+      .word {
+        font-family: Inter, Manrope, "Segoe UI", Arial, sans-serif;
+        font-size: 118px;
+        font-weight: 600;
+        fill: #000;
+      }
+    </style>
+  </defs>
+
+  <!-- Isotipo -->
+  <g transform="translate(20,20)">
+    <!-- Cara izquierda -->
+    <polygon class="icon"
+      points="40,20 125,70 125,185 40,135"/>
+
+    <!-- Cara derecha -->
+    <polygon class="icon"
+      points="215,20 130,70 130,185 215,135"/>
+
+    <!-- Panel interior izquierdo -->
+    <polygon class="icon"
+      points="125,70 150,55 150,200 125,185"/>
+
+    <!-- Panel interior derecho -->
+    <polygon class="icon"
+      points="130,70 105,55 105,200 130,185"/>
+  </g>
+
+  <!-- Texto -->
+  <text x="300" y="165" class="word">SazonIA</text>
+</svg>
