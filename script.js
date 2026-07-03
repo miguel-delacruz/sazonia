@@ -112,6 +112,18 @@ function abrirModal(receta, coincidencias, faltantes) {
     `<li class="paso-item"><span class="paso-num">${i + 1}</span><span>${paso}</span></li>`
   ).join("");
 
+  const listaCompras = document.getElementById("modal-lista-compras");
+  const compraItems = document.getElementById("modal-compra-items");
+  if (faltantes.length > 0) {
+    compraItems.innerHTML = faltantes.map(ing =>
+      `<li class="compra-item"><span class="compra-icono" aria-hidden="true">🛒</span><span>${ing}</span></li>`
+    ).join("");
+    listaCompras.removeAttribute("hidden");
+  } else {
+    compraItems.innerHTML = "";
+    listaCompras.setAttribute("hidden", "");
+  }
+
   document.getElementById("modal-nombre").textContent = receta.nombre;
   document.getElementById("modal-meta").textContent =
     `⏱ ${receta.tiempo_min} min · 🍽 ${receta.porciones} porciones · 📊 ${receta.dificultad}`;

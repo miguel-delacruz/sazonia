@@ -428,6 +428,31 @@ main {
   padding-bottom: 0.5rem;
 }
 
+/* ─── Lista de compras del modal ───────────────────────────────────────────── */
+.modal-compra-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: var(--bg-warm-gray);
+  border-radius: 12px;
+  padding: 0.875rem 1rem;
+}
+
+.compra-item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-light);
+  color: var(--text-primary);
+}
+
+.compra-icono {
+  font-size: var(--text-nav);
+  flex-shrink: 0;
+}
+
 /* ─── Lista de ingredientes del modal ──────────────────────────────────────── */
 .modal-ingredientes {
   list-style: none;
