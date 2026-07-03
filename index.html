@@ -48,6 +48,14 @@
       </div>
     </section>
 
+    <!-- ─── Sección de favoritos (persistente) ─────────────────────────── -->
+    <section class="seccion-favoritos" aria-live="polite">
+      <div class="container">
+        <h2 class="favoritos-titulo">Tus Recetas Favoritas</h2>
+        <div id="favoritos-grid" class="favoritos-grid"></div>
+      </div>
+    </section>
+
     <!-- ─── Sección de resultados ──────────────────────────────────────── -->
     <section class="seccion-resultados" aria-live="polite">
       <div class="container">
@@ -72,6 +80,7 @@
       <button id="modal-cerrar" class="modal-cerrar" aria-label="Cerrar receta">✕</button>
       <h2 id="modal-nombre" class="modal-nombre"></h2>
       <p id="modal-meta" class="modal-meta"></p>
+      <button id="modal-favorito" class="btn-favorito" type="button" aria-pressed="false" aria-label="Marcar como favorita">☆</button>
       <section id="modal-lista-compras" class="modal-lista-compras" hidden>
         <h4 class="modal-seccion-titulo">Lista de compras</h4>
         <ul id="modal-compra-items" class="modal-compra-items"></ul>

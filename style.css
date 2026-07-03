@@ -223,6 +223,65 @@ main {
   gap: 1rem;
 }
 
+.favoritos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* ─── Cabecera de card (título + botón favorito) ───────────────────────────── */
+.receta-card-cabecera {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.receta-card-cabecera h3 {
+  flex: 1;
+}
+
+/* ─── Botón favorito (estrella) ────────────────────────────────────────────── */
+.btn-favorito {
+  background: var(--bg-white);
+  border: 1.5px solid var(--bg-stone);
+  color: var(--color-brand-blue);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: var(--text-h4);
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  font-family: var(--font-principal);
+  font-weight: var(--font-weight-medium);
+}
+
+.btn-favorito:hover {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+.btn-favorito[aria-pressed="true"] {
+  background: var(--color-brand-blue);
+  color: var(--color-white);
+  border-color: var(--color-brand-blue);
+}
+
+/* Botón favorito del modal: más grande, absoluto arriba a la izquierda */
+#modal-favorito {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 40px;
+  height: 40px;
+  font-size: var(--text-h3);
+}
+
 /* ─── Card de receta ───────────────────────────────────────────────────────── */
 .receta-card {
   background-color: var(--bg-soft-blue);
@@ -268,6 +327,19 @@ main {
   font-weight: var(--font-weight-light);
   color: var(--text-secondary);
   padding-block: 1rem;
+}
+
+/* ─── Sección favoritos ─────────────────────────────────────────────────────── */
+.seccion-favoritos {
+  background-color: var(--bg-white);
+  padding-block: 2rem 2.5rem;
+}
+
+.favoritos-titulo {
+  font-size: var(--text-h4);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-subheading);
+  margin-bottom: 1rem;
 }
 
 /* ─── Footer ───────────────────────────────────────────────────────────────── */
