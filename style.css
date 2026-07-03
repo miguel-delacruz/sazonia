@@ -1,0 +1,312 @@
+/* ─── Design tokens ────────────────────────────────────────────────────────── */
+:root {
+  /* Tipografía */
+  --font-principal: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-weight-light: 300;   /* cuerpo, nav, labels */
+  --font-weight-medium: 500;  /* headings, botones, énfasis */
+
+  --text-h1: 72px;
+  --text-h2: 52px;
+  --text-h3: 32px;
+  --text-h4: 20px;
+  --text-body: 16px;
+  --text-small: 12px;
+  --text-nav: 14px;
+
+  /* Colores — Brand */
+  --color-brand-blue: #000BFF;
+  --color-ink: #0d0d0d;
+  --color-white: #ffffff;
+  --color-offwhite: #fdfcfb;
+
+  /* Fondos de sección */
+  --bg-white: #ffffff;
+  --bg-warm-gray: #f9f8f6;
+  --bg-soft-blue: #eef0ff;
+  --bg-stone: #e7e7e2;
+  --bg-dark: #1a1a1a;
+
+  /* Texto */
+  --text-primary: #0d0d0d;
+  --text-subheading: #262320;
+  --text-secondary: rgba(13, 13, 13, 0.55);
+  --text-muted: rgba(13, 13, 13, 0.35);
+}
+
+/* ─── Reset & base ─────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: var(--text-body);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-principal);
+  font-weight: var(--font-weight-light);
+  color: var(--text-primary);
+  background-color: var(--bg-white);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Contenedor centrado ──────────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 860px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* ─── Header ───────────────────────────────────────────────────────────────── */
+.site-header {
+  background-color: var(--color-offwhite);
+  border-bottom: 1px solid var(--bg-stone);
+  padding-block: 1rem;
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.header-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.header-logo {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+.header-nombre {
+  font-size: var(--text-h4);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.header-tagline {
+  font-size: var(--text-nav);
+  font-weight: var(--font-weight-light);
+  color: var(--text-secondary);
+}
+
+/* ─── Sección búsqueda ─────────────────────────────────────────────────────── */
+.seccion-busqueda {
+  background-color: var(--bg-white);
+  padding-block: 3.5rem 2.5rem;
+}
+
+.busqueda-titulo {
+  font-size: clamp(2rem, 8vw, var(--text-h1));
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+
+.busqueda-subtitulo {
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-light);
+  color: var(--text-secondary);
+  max-width: 540px;
+  line-height: 1.55;
+  margin-bottom: 2rem;
+}
+
+/* ─── Formulario ───────────────────────────────────────────────────────────── */
+.form-busqueda {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: var(--text-nav);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-subheading);
+}
+
+.form-fila {
+  display: flex;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+.form-input {
+  flex: 1;
+  min-height: 44px;
+  padding: 0 1rem;
+  font-family: var(--font-principal);
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-light);
+  color: var(--text-primary);
+  background-color: var(--bg-white);
+  border: 1.5px solid var(--bg-stone);
+  border-radius: 9999px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+}
+
+.form-input:focus {
+  border-color: var(--color-brand-blue);
+}
+
+.form-hint {
+  font-size: var(--text-small);
+  font-weight: var(--font-weight-light);
+  color: var(--text-muted);
+  padding-inline: 0.25rem;
+}
+
+/* ─── Botón primario ───────────────────────────────────────────────────────── */
+.btn-primario {
+  background: var(--color-brand-blue);
+  color: var(--color-white);
+  padding: 12px 20px;
+  border-radius: 9999px; /* pill */
+  border: none;
+  font-family: var(--font-principal);
+  font-size: var(--text-nav);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+  min-height: 44px;
+}
+
+.btn-primario:hover {
+  opacity: 0.75;
+  transform: scale(1.03);
+}
+
+.btn-primario:active {
+  transform: scale(0.98);
+}
+
+/* ─── Sección resultados ───────────────────────────────────────────────────── */
+.seccion-resultados {
+  background-color: var(--bg-warm-gray);
+  flex: 1;
+  padding-block: 2rem 3rem;
+  min-height: 80px;
+}
+
+.seccion-resultados:empty,
+.seccion-resultados:has(#resultados:empty) {
+  padding-block: 0;
+  min-height: 0;
+}
+
+/* ─── Grid de cards ────────────────────────────────────────────────────────── */
+.resultados-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* ─── Card de receta ───────────────────────────────────────────────────────── */
+.receta-card {
+  background-color: var(--bg-soft-blue);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.receta-card h3 {
+  font-size: var(--text-h3);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  line-height: 1.15;
+}
+
+.receta-card .match {
+  font-size: var(--text-nav);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-brand-blue);
+}
+
+.receta-card .faltantes {
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-light);
+  color: var(--text-subheading);
+  line-height: 1.5;
+}
+
+.receta-card .tiempo {
+  font-size: var(--text-small);
+  font-weight: var(--font-weight-light);
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
+/* ─── Mensaje vacío / error ────────────────────────────────────────────────── */
+.mensaje {
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-light);
+  color: var(--text-secondary);
+  padding-block: 1rem;
+}
+
+/* ─── Footer ───────────────────────────────────────────────────────────────── */
+.site-footer {
+  background-color: var(--bg-dark);
+  padding-block: 1.25rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-texto {
+  font-size: var(--text-small);
+  font-weight: var(--font-weight-light);
+  color: var(--color-white);
+  opacity: 0.6;
+}
+
+/* ─── Responsive — tablet (≥ 640px) ───────────────────────────────────────── */
+@media (min-width: 640px) {
+  .header-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .resultados-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .receta-card h3 {
+    font-size: clamp(1.25rem, 3vw, var(--text-h3));
+  }
+}
+
+/* ─── Responsive — desktop (≥ 1200px) ─────────────────────────────────────── */
+@media (min-width: 1200px) {
+  .seccion-busqueda {
+    padding-block: 5rem 3.5rem;
+  }
+}
