@@ -225,6 +225,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .receta-card h3 {
@@ -292,7 +294,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .receta-card h3 {
+.receta-card h3 {
     font-size: clamp(1.25rem, 3vw, var(--text-h3));
   }
 }
@@ -303,3 +305,186 @@ body {
     padding-block: 5rem 3.5rem;
   }
 }
+
+/* ─── Card hover & CTA ─────────────────────────────────────────────────────── */
+.receta-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 11, 255, 0.1);
+}
+
+.receta-card:focus-visible {
+  outline: 2px solid var(--color-brand-blue);
+  outline-offset: 3px;
+}
+
+.card-cta {
+  font-size: var(--text-small);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-brand-blue);
+  margin-top: 0.5rem;
+}
+
+/* ─── Modal ────────────────────────────────────────────────────────────────── */
+#modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+#modal[hidden] {
+  display: none;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(26, 26, 26, 0.72); /* --bg-dark con opacidad */
+}
+
+.modal-contenido {
+  position: relative;
+  z-index: 1;
+  background-color: var(--bg-white);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  max-height: 85vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  /* scroll suave en iOS */
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal-cerrar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--bg-stone);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: var(--text-body);
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  font-weight: var(--font-weight-medium);
+  transition: opacity 0.2s ease;
+  flex-shrink: 0;
+}
+
+.modal-cerrar:hover {
+  opacity: 0.6;
+}
+
+.modal-nombre {
+  font-size: clamp(1.5rem, 5vw, var(--text-h2));
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  line-height: 1.15;
+  padding-right: 2.5rem; /* espacio para el botón X */
+}
+
+.modal-meta {
+  font-size: var(--text-nav);
+  font-weight: var(--font-weight-light);
+  color: var(--text-secondary);
+}
+
+.modal-seccion-titulo {
+  font-size: var(--text-h4);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-subheading);
+  border-bottom: 1px solid var(--bg-stone);
+  padding-bottom: 0.5rem;
+}
+
+/* ─── Lista de ingredientes del modal ──────────────────────────────────────── */
+.modal-ingredientes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ing-item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-light);
+}
+
+.ing-icono {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: var(--text-small);
+  font-weight: var(--font-weight-medium);
+}
+
+.ing-tiene .ing-icono {
+  background-color: var(--bg-soft-blue);
+  color: var(--color-brand-blue);
+}
+
+.ing-falta .ing-icono {
+  background-color: var(--bg-stone);
+  color: var(--text-secondary);
+}
+
+.ing-tiene {
+  color: var(--text-primary);
+}
+
+.ing-falta {
+  color: var(--text-secondary);
+}
+
+/* ─── Lista de pasos del modal ─────────────────────────────────────────────── */
+.modal-pasos {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.paso-item {
+  display: flex;
+  gap: 0.875rem;
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-light);
+  color: var(--text-primary);
+  line-height: 1.55;
+  align-items: flex-start;
+}
+
+.paso-num {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-brand-blue);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-small);
+  font-weight: var(--font-weight-medium);
+  margin-top: 0.15rem;
+}
+

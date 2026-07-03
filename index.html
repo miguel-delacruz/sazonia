@@ -65,6 +65,20 @@
     </div>
   </footer>
 
+  <!-- ─── Modal de receta completa ────────────────────────────────────────── -->
+  <div id="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-nombre">
+    <div id="modal-overlay" class="modal-overlay"></div>
+    <div class="modal-contenido">
+      <button id="modal-cerrar" class="modal-cerrar" aria-label="Cerrar receta">✕</button>
+      <h2 id="modal-nombre" class="modal-nombre"></h2>
+      <p id="modal-meta" class="modal-meta"></p>
+      <h4 class="modal-seccion-titulo">Ingredientes</h4>
+      <ul id="modal-ingredientes" class="modal-ingredientes"></ul>
+      <h4 class="modal-seccion-titulo">Preparación</h4>
+      <ol id="modal-pasos" class="modal-pasos"></ol>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
