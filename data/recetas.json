@@ -5,6 +5,7 @@
     "ingredientes": ["pollo", "arroz", "cebolla china", "culantro", "ajo", "aji amarillo", "arveja", "zanahoria"],
     "tiempo_min": 45,
     "porciones": 4,
+    "dificultad": "Media",
     "pasos": [
       "Licuar culantro con un poco de agua.",
       "Sellar el pollo en una olla con aceite.",
@@ -19,6 +20,7 @@
     "ingredientes": ["carne de res", "cebolla", "tomate", "papa", "sillao", "vinagre", "ajo", "aji amarillo", "arroz"],
     "tiempo_min": 30,
     "porciones": 4,
+    "dificultad": "Facil",
     "pasos": [
       "Cortar la carne en tiras y sazonar con sal y pimienta.",
       "Freir las papas en cuadritos hasta dorar.",
@@ -33,6 +35,7 @@
     "ingredientes": ["pollo", "pan", "leche", "aji amarillo", "nuez", "queso parmesano", "cebolla", "ajo", "arroz", "papa"],
     "tiempo_min": 50,
     "porciones": 4,
+    "dificultad": "Media",
     "pasos": [
       "Cocinar y deshilachar el pollo, reservando el caldo.",
       "Remojar el pan en leche hasta que se deshaga.",
@@ -47,6 +50,7 @@
     "ingredientes": ["tallarin", "carne de res", "cebolla", "tomate", "sillao", "ajo", "aji amarillo", "culantro"],
     "tiempo_min": 30,
     "porciones": 4,
+    "dificultad": "Facil",
     "pasos": [
       "Cocinar el tallarin al dente y reservar.",
       "Saltar la carne en tiras a fuego alto hasta sellar.",
@@ -61,6 +65,7 @@
     "ingredientes": ["papa", "aji amarillo", "limon", "pollo", "mayonesa", "palta", "huevo", "aceituna"],
     "tiempo_min": 40,
     "porciones": 4,
+    "dificultad": "Media",
     "pasos": [
       "Sancochar y hacer pure la papa, sazonar con aji amarillo, limon y sal.",
       "Mezclar el pollo deshilachado con mayonesa.",
@@ -75,6 +80,7 @@
     "ingredientes": ["carne de res", "culantro", "cebolla", "ajo", "arveja", "zanahoria", "arroz", "aji amarillo"],
     "tiempo_min": 60,
     "porciones": 4,
+    "dificultad": "Media",
     "pasos": [
       "Sellar los trozos de carne en una olla con aceite.",
       "Licuar culantro con un poco de agua.",
@@ -89,6 +95,7 @@
     "ingredientes": ["pollo", "papa", "ajo", "limon", "romero", "aceite de oliva", "comino"],
     "tiempo_min": 55,
     "porciones": 4,
+    "dificultad": "Facil",
     "pasos": [
       "Sazonar el pollo con ajo molido, limon, comino, sal y pimienta.",
       "Cortar las papas en trozos medianos y mezclar con aceite y romero.",
@@ -103,6 +110,7 @@
     "ingredientes": ["arroz", "pollo", "huevo", "cebolla china", "sillao", "ajinomoto", "aceite de ajonjoli"],
     "tiempo_min": 25,
     "porciones": 4,
+    "dificultad": "Facil",
     "pasos": [
       "Usar arroz cocido y frio de preferencia (del dia anterior).",
       "Batir y saltar los huevos, reservar en trozos.",
@@ -117,6 +125,7 @@
     "ingredientes": ["frejol", "arroz", "cebolla", "ajo", "aji amarillo", "carne de res", "huevo", "platano"],
     "tiempo_min": 35,
     "porciones": 4,
+    "dificultad": "Media",
     "pasos": [
       "Mezclar frejoles cocidos con arroz cocido, machacando un poco.",
       "Sofreir cebolla, ajo y aji amarillo, agregar la mezcla de frejol y arroz.",
@@ -131,6 +140,7 @@
     "ingredientes": ["pollo", "papa", "zanahoria", "arveja", "cebolla", "tomate", "vino", "arroz"],
     "tiempo_min": 50,
     "porciones": 4,
+    "dificultad": "Media",
     "pasos": [
       "Sellar las presas de pollo en una olla con aceite.",
       "Sofreir cebolla y tomate hasta formar una salsa.",
@@ -145,6 +155,7 @@
     "ingredientes": ["arroz", "carne molida", "cebolla", "aceituna", "huevo", "pasas", "ajo"],
     "tiempo_min": 45,
     "porciones": 4,
+    "dificultad": "Media",
     "pasos": [
       "Cocinar el arroz blanco graneado y reservar.",
       "Sofreir cebolla y ajo, agregar la carne molida y dorar.",
@@ -159,6 +170,7 @@
     "ingredientes": ["papa", "carne molida", "cebolla", "huevo", "aceituna", "pasas", "aji amarillo", "harina"],
     "tiempo_min": 50,
     "porciones": 4,
+    "dificultad": "Dificil",
     "pasos": [
       "Sancochar y hacer pure la papa, sazonar con sal.",
       "Sofreir cebolla y aji amarillo, agregar la carne molida y dorar.",
@@ -173,6 +185,7 @@
     "ingredientes": ["carne de res", "papa", "huevo", "platano", "cebolla", "arroz", "ajo"],
     "tiempo_min": 35,
     "porciones": 4,
+    "dificultad": "Facil",
     "pasos": [
       "Sazonar el bistec de carne con ajo, sal y pimienta.",
       "Freir las papas en bastones hasta dorar.",
@@ -187,6 +200,7 @@
     "ingredientes": ["pollo", "tomate", "cebolla", "ajo", "zanahoria", "arveja", "arroz", "comino"],
     "tiempo_min": 45,
     "porciones": 4,
+    "dificultad": "Facil",
     "pasos": [
       "Sazonar el pollo con sal, pimienta y comino.",
       "Sellar el pollo en una olla con aceite.",
