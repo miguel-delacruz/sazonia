@@ -28,6 +28,12 @@ function calcularCoincidencia(ingredientesUsuario, receta) {
 
 const MINIMO_PORCENTAJE_RELEVANTE = 0.20;
 
+function recetaMasSencilla(recetas) {
+  return recetas.reduce((simple, r) =>
+    r.ingredientes.length < simple.ingredientes.length ? r : simple
+  );
+}
+
 function recomendar(inputUsuario, recetas) {
   const ingredientesUsuario = parseIngredientesUsuario(inputUsuario);
   if (ingredientesUsuario.length === 0) return { items: [], fallback: false, sinCoincidencia: false };
@@ -39,22 +45,34 @@ function recomendar(inputUsuario, recetas) {
   const maxPorcentaje = ranked.length > 0 ? ranked[0].porcentaje : 0;
 
   // Caso A: ninguna receta comparte ni un solo ingrediente con la búsqueda.
-  // Mostramos SOLO un mensaje limpio, sin cards (evita ensuciar la UI con 0%).
+  // Filosofía del producto: "se cocina con lo que hay" — siempre damos una sugerencia
+  // accionable. Mostramos la receta con menos ingredientes del catálogo como opción
+  // de respaldo, listando todos sus ingredientes como faltantes.
   if (maxPorcentaje === 0) {
-    return { items: [], fallback: false, sinCoincidencia: true };
+    const sencilla = recetaMasSencilla(recetas);
+    return {
+      items: [{
+        receta: sencilla,
+        porcentaje: 0,
+        coincidencias: [],
+        faltantes: sencilla.ingredientes.map(normalizar),
+      }],
+      fallback: true,
+      sugerenciaAccionable: true,
+    };
   }
 
   const relevantes = ranked.filter(r => r.porcentaje >= MINIMO_PORCENTAJE_RELEVANTE);
 
   // Caso B: hay recetas relevantes (>= 20%). Mostramos hasta 5.
   if (relevantes.length > 0) {
-    return { items: relevantes.slice(0, 5), fallback: false, sinCoincidencia: false };
+    return { items: relevantes.slice(0, 5), fallback: false, sugerenciaAccionable: false };
   }
 
   // Caso C: hay coincidencia real (> 0%) pero ninguna supera el umbral de 20%.
   // Mantenemos la regla de "nunca pantalla vacía" mostrando la mejor disponible
   // con un mensaje que aclara que es una aproximación.
-  return { items: ranked.slice(0, 1), fallback: true, sinCoincidencia: false };
+  return { items: ranked.slice(0, 1), fallback: true, sugerenciaAccionable: false };
 }
 
 // ─── Renderizado de resultados ────────────────────────────────────────────────
@@ -82,21 +100,19 @@ function crearBotonFavorito(receta) {
   return btn;
 }
 
-function mostrarResultados({ items, fallback, sinCoincidencia }) {
+function mostrarResultados({ items, fallback, sugerenciaAccionable }) {
   const contenedor = document.getElementById("resultados");
   contenedor.innerHTML = "";
-
-  if (sinCoincidencia) {
-    contenedor.innerHTML = `<p class="mensaje mensaje-fallback">No encontramos una receta con buena coincidencia. Prueba con otros ingredientes.</p>`;
-    return;
-  }
 
   if (items.length === 0) {
     contenedor.innerHTML = `<p class="mensaje">Escribe al menos un ingrediente para empezar 🍳</p>`;
     return;
   }
 
-  if (fallback) {
+  if (sugerenciaAccionable) {
+    contenedor.insertAdjacentHTML("beforeend",
+      `<p class="mensaje mensaje-fallback">Con lo que tienes hoy no hay una coincidencia directa en nuestro recetario, pero aquí tienes una opción sencilla que podrías preparar agregando algunos ingredientes:</p>`);
+  } else if (fallback) {
     contenedor.insertAdjacentHTML("beforeend",
       `<p class="mensaje mensaje-fallback">No encontramos una receta con buena coincidencia, pero esta es la opción más cercana:</p>`);
   }
