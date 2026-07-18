@@ -336,6 +336,13 @@ main {
   padding-block: 1rem;
 }
 
+.mensaje-fallback {
+  color: var(--text-subheading);
+  font-weight: var(--font-weight-medium);
+  border-left: 3px solid var(--color-brand-blue);
+  padding-inline: 0.875rem 0.25rem;
+}
+
 /* ─── Sección favoritos ─────────────────────────────────────────────────────── */
 .seccion-favoritos {
   background-color: var(--bg-white);

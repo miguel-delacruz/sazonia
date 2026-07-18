@@ -26,14 +26,26 @@ function calcularCoincidencia(ingredientesUsuario, receta) {
   return { receta, porcentaje, coincidencias, faltantes };
 }
 
+const MINIMO_PORCENTAJE_RELEVANTE = 0.20;
+
 function recomendar(inputUsuario, recetas) {
   const ingredientesUsuario = parseIngredientesUsuario(inputUsuario);
-  if (ingredientesUsuario.length === 0) return [];
+  if (ingredientesUsuario.length === 0) return { items: [], fallback: false };
 
-  return recetas
+  const ranked = recetas
     .map(r => calcularCoincidencia(ingredientesUsuario, r))
-    .sort((a, b) => b.porcentaje - a.porcentaje)
-    .slice(0, 5); // top 5, para mostrar el rango de compatibilidad en una sola busqueda
+    .sort((a, b) => b.porcentaje - a.porcentaje);
+
+  const relevantes = ranked.filter(r => r.porcentaje >= MINIMO_PORCENTAJE_RELEVANTE);
+
+  if (relevantes.length > 0) {
+    return { items: relevantes.slice(0, 5), fallback: false };
+  }
+
+  // Fallback: ninguna receta supera el umbral. Mantenemos la regla de "nunca pantalla vacía"
+  // mostrando la mejor opción disponible, marcada con fallback=true para que el render use
+  // un mensaje distinto y deje claro que la coincidencia es baja.
+  return { items: ranked.slice(0, 1), fallback: true };
 }
 
 // ─── Renderizado de resultados ────────────────────────────────────────────────
@@ -61,16 +73,21 @@ function crearBotonFavorito(receta) {
   return btn;
 }
 
-function mostrarResultados(resultados) {
+function mostrarResultados({ items, fallback }) {
   const contenedor = document.getElementById("resultados");
   contenedor.innerHTML = "";
 
-  if (resultados.length === 0) {
+  if (items.length === 0) {
     contenedor.innerHTML = `<p class="mensaje">Escribe al menos un ingrediente para empezar 🍳</p>`;
     return;
   }
 
-  resultados.forEach(({ receta, porcentaje, coincidencias, faltantes }) => {
+  if (fallback) {
+    contenedor.insertAdjacentHTML("beforeend",
+      `<p class="mensaje mensaje-fallback">No encontramos una receta con buena coincidencia, pero esta es la opción más cercana:</p>`);
+  }
+
+  items.forEach(({ receta, porcentaje, faltantes, coincidencias }) => {
     const pct = Math.round(porcentaje * 100);
     const mensajeFaltantes = faltantes.length > 0
       ? `Te faltarían: ${faltantes.join(", ")}`
