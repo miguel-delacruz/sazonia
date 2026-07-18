@@ -211,9 +211,22 @@ function renderFavoritos() {
 // porque renderFavoritos no hace nada si `recetas` aún está vacío).
 renderFavoritos();
 
+const inputIngredientes = document.getElementById("input-ingredientes");
+const btnBuscar = document.querySelector("#form-ingredientes .btn-primario");
+
+function actualizarEstadoBoton() {
+  const valor = inputIngredientes.value ?? "";
+  const vacio = valor.trim().length === 0;
+  btnBuscar.disabled = vacio;
+}
+
+inputIngredientes.addEventListener("input", actualizarEstadoBoton);
+actualizarEstadoBoton();
+
 document.getElementById("form-ingredientes").addEventListener("submit", (e) => {
   e.preventDefault();
   const input = document.getElementById("input-ingredientes").value;
+  if (input == null || input.trim() === "") return;
   const resultados = recomendar(input, recetas);
   mostrarResultados(resultados);
 });
