@@ -17,7 +17,7 @@
   {
     "id": "lomo-saltado",
     "nombre": "Lomo Saltado",
-    "ingredientes": ["carne de res", "cebolla", "tomate", "papa", "sillao", "vinagre", "ajo", "aji amarillo", "arroz"],
+    "ingredientes": ["carne de res", "cebolla", "tomate", "papa", "sillao", "vinagre", "ajo", "aji amarillo", "arroz", "pimienta"],
     "tiempo_min": 30,
     "porciones": 4,
     "dificultad": "Facil",
@@ -77,31 +77,31 @@
   {
     "id": "seco-de-res",
     "nombre": "Seco de Res",
-    "ingredientes": ["carne de res", "culantro", "cebolla", "ajo", "arveja", "zanahoria", "arroz", "aji amarillo"],
+    "ingredientes": ["carne de res", "culantro", "cebolla", "ajo", "arveja", "zanahoria", "arroz", "aji amarillo", "laurel"],
     "tiempo_min": 60,
     "porciones": 4,
     "dificultad": "Media",
     "pasos": [
       "Sellar los trozos de carne en una olla con aceite.",
       "Licuar culantro con un poco de agua.",
-      "Sofreir cebolla, ajo y aji amarillo, agregar la carne sellada.",
+      "Sofreir cebolla, ajo y aji amarillo, agregar la carne sellada junto a una hoja de laurel.",
       "Incorporar el licuado de culantro y agua, cocinar tapado hasta que la carne este suave.",
-      "Anadir arveja y zanahoria los ultimos minutos, servir con arroz."
+      "Anadir arveja y zanahoria los ultimos minutos, retirar el laurel y servir con arroz."
     ]
   },
   {
     "id": "pollo-al-horno-con-papas",
     "nombre": "Pollo al Horno con Papas",
-    "ingredientes": ["pollo", "papa", "ajo", "limon", "romero", "aceite de oliva", "comino"],
+    "ingredientes": ["pollo", "papa", "ajo", "limon", "romero", "aceite de oliva", "comino", "mantequilla", "oregano"],
     "tiempo_min": 55,
     "porciones": 4,
     "dificultad": "Facil",
     "pasos": [
-      "Sazonar el pollo con ajo molido, limon, comino, sal y pimienta.",
+      "Sazonar el pollo con ajo molido, limon, comino, oregano, sal y pimienta.",
+      "Untar el pollo con un poco de mantequilla derretida antes de hornear.",
       "Cortar las papas en trozos medianos y mezclar con aceite y romero.",
       "Colocar el pollo y las papas en una bandeja para horno.",
-      "Hornear a 200 grados por 40-45 minutos hasta dorar.",
-      "Dejar reposar 5 minutos antes de servir."
+      "Hornear a 200 grados por 40-45 minutos hasta dorar."
     ]
   },
   {
@@ -270,13 +270,14 @@
   {
     "id": "menestron-con-arroz",
     "nombre": "Menestron con Arroz",
-    "ingredientes": ["zapallo", "zanahoria", "papa", "poroto verde", "arroz"],
-    "tiempo_min": 35,
+    "ingredientes": ["zapallo", "zanahoria", "papa", "poroto verde", "arroz", "apio", "habas", "pallares", "choclo", "col", "perejil"],
+    "tiempo_min": 40,
     "porciones": 4,
     "dificultad": "Facil",
     "pasos": [
-      "Cortar el zapallo, la zanahoria, la papa y el poroto verde en trozos.",
-      "Hervir las verduras en agua con sal hasta que esten suaves.",
+      "Cortar el zapallo, la zanahoria, la papa, el poroto verde, el apio y la col en trozos.",
+      "Hervir las verduras junto con las habas y los pallares en agua con sal hasta que esten suaves.",
+      "Agregar el choclo desgranado o en rodajas los ultimos minutos de coccion.",
       "Sazonar con hierbas al gusto.",
       "Servir el menestron acompanado de arroz blanco aparte."
     ]
@@ -321,6 +322,111 @@
       "Picar la cebolla en cuadritos pequeños.",
       "Mezclar el atun escurrido con la cebolla picada y un chorrito de limon.",
       "Servir la mezcla de atun sobre el arroz caliente."
+    ]
+  },
+  {
+    "id": "chicharron-de-cerdo-con-camote",
+    "nombre": "Chicharrón de Cerdo con Camote",
+    "ingredientes": ["cerdo (chancho)", "camote", "cebolla", "limon"],
+    "tiempo_min": 35,
+    "porciones": 3,
+    "dificultad": "Media",
+    "pasos": [
+      "Cortar la carne de cerdo en trozos medianos y sazonar con sal.",
+      "Freir el cerdo en su propia grasa a fuego medio hasta dorar y quedar crocante.",
+      "Freir el camote en trozos o rodajas hasta dorar.",
+      "Preparar una cebolla encurtida con limon y sal.",
+      "Servir el chicharron con el camote frito y la cebolla encurtida encima."
+    ]
+  },
+  {
+    "id": "pavita-guisada-con-arroz",
+    "nombre": "Pavita Guisada con Arroz",
+    "ingredientes": ["pavo", "arroz", "cebolla", "tomate", "ajo"],
+    "tiempo_min": 45,
+    "porciones": 4,
+    "dificultad": "Facil",
+    "pasos": [
+      "Cortar la pavita en trozos y sazonar con sal y pimienta.",
+      "Sellar la pavita en una olla con aceite.",
+      "Sofreir cebolla, ajo y tomate hasta formar una salsa.",
+      "Incorporar la pavita sellada, agregar agua y cocinar tapado hasta que este tierna.",
+      "Servir con arroz blanco."
+    ]
+  },
+  {
+    "id": "sopa-seca-de-fideos-con-pollo",
+    "nombre": "Sopa Seca de Fideos con Pollo",
+    "ingredientes": ["fideos", "pollo", "tomate", "ajo", "queso"],
+    "tiempo_min": 40,
+    "porciones": 4,
+    "dificultad": "Media",
+    "pasos": [
+      "Cocinar el pollo en agua con sal hasta que este tierno, reservando el caldo.",
+      "Sofreir cebolla, ajo y tomate hasta formar una salsa espesa.",
+      "Cocinar los fideos en el caldo de pollo hasta que absorban el liquido.",
+      "Mezclar los fideos con la salsa y el pollo deshilachado.",
+      "Servir espolvoreado con queso rallado."
+    ]
+  },
+  {
+    "id": "quinua-guisada-con-pollo",
+    "nombre": "Quinua Guisada con Pollo",
+    "ingredientes": ["quinua", "pollo", "cebolla", "zanahoria", "arveja"],
+    "tiempo_min": 40,
+    "porciones": 4,
+    "dificultad": "Facil",
+    "pasos": [
+      "Lavar bien la quinua hasta que el agua salga clara.",
+      "Sellar el pollo en una olla con aceite.",
+      "Sofreir cebolla y zanahoria, agregar el pollo sellado.",
+      "Incorporar la quinua y agua o caldo, cocinar tapado a fuego bajo.",
+      "Anadir arveja los ultimos minutos y servir caliente."
+    ]
+  },
+  {
+    "id": "saltado-de-verduras-con-pollo",
+    "nombre": "Saltado de Verduras con Pollo",
+    "ingredientes": ["pollo", "brocoli", "pimiento", "vainita", "sillao", "ajo"],
+    "tiempo_min": 25,
+    "porciones": 4,
+    "dificultad": "Facil",
+    "pasos": [
+      "Cortar el pollo en tiras y sazonar con sal y pimienta.",
+      "Saltar el pollo a fuego alto hasta sellar.",
+      "Agregar brocoli, pimiento y vainita, saltar brevemente para mantenerlos crocantes.",
+      "Incorporar el ajo picado y el sillao.",
+      "Servir caliente, recien salteado."
+    ]
+  },
+  {
+    "id": "menestra-criolla-con-arroz",
+    "nombre": "Menestra Criolla con Arroz",
+    "ingredientes": ["lentejas", "garbanzos", "arroz", "cebolla", "tomate"],
+    "tiempo_min": 40,
+    "porciones": 4,
+    "dificultad": "Facil",
+    "pasos": [
+      "Remojar las lentejas y garbanzos previamente si es necesario.",
+      "Sofreir cebolla y tomate hasta formar una salsa.",
+      "Agregar las lentejas y garbanzos cocidos, mezclar con la salsa.",
+      "Cocinar unos minutos a fuego bajo para que tomen sabor.",
+      "Servir con arroz blanco aparte."
+    ]
+  },
+  {
+    "id": "tortilla-de-espinaca-con-arroz",
+    "nombre": "Tortilla de Espinaca con Arroz",
+    "ingredientes": ["espinaca", "huevo", "cebolla", "arroz"],
+    "tiempo_min": 20,
+    "porciones": 2,
+    "dificultad": "Facil",
+    "pasos": [
+      "Lavar y picar la espinaca finamente.",
+      "Batir los huevos y mezclar con la espinaca y cebolla picada.",
+      "Verter la mezcla en un sarten con aceite caliente.",
+      "Cocinar por ambos lados hasta que cuaje bien.",
+      "Servir con arroz blanco."
     ]
   }
 ]
