@@ -402,6 +402,10 @@ main {
   .seccion-busqueda {
     padding-block: 5rem 3.5rem;
   }
+
+  .resultados-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* ─── Card hover & CTA ─────────────────────────────────────────────────────── */

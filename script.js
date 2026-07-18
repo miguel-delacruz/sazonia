@@ -33,7 +33,7 @@ function recomendar(inputUsuario, recetas) {
   return recetas
     .map(r => calcularCoincidencia(ingredientesUsuario, r))
     .sort((a, b) => b.porcentaje - a.porcentaje)
-    .slice(0, 3); // top 3, pero muestra siempre al menos 1
+    .slice(0, 5); // top 5, para mostrar el rango de compatibilidad en una sola busqueda
 }
 
 // ─── Renderizado de resultados ────────────────────────────────────────────────
