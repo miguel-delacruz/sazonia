@@ -30,22 +30,31 @@ const MINIMO_PORCENTAJE_RELEVANTE = 0.20;
 
 function recomendar(inputUsuario, recetas) {
   const ingredientesUsuario = parseIngredientesUsuario(inputUsuario);
-  if (ingredientesUsuario.length === 0) return { items: [], fallback: false };
+  if (ingredientesUsuario.length === 0) return { items: [], fallback: false, sinCoincidencia: false };
 
   const ranked = recetas
     .map(r => calcularCoincidencia(ingredientesUsuario, r))
     .sort((a, b) => b.porcentaje - a.porcentaje);
 
-  const relevantes = ranked.filter(r => r.porcentaje >= MINIMO_PORCENTAJE_RELEVANTE);
+  const maxPorcentaje = ranked.length > 0 ? ranked[0].porcentaje : 0;
 
-  if (relevantes.length > 0) {
-    return { items: relevantes.slice(0, 5), fallback: false };
+  // Caso A: ninguna receta comparte ni un solo ingrediente con la búsqueda.
+  // Mostramos SOLO un mensaje limpio, sin cards (evita ensuciar la UI con 0%).
+  if (maxPorcentaje === 0) {
+    return { items: [], fallback: false, sinCoincidencia: true };
   }
 
-  // Fallback: ninguna receta supera el umbral. Mantenemos la regla de "nunca pantalla vacía"
-  // mostrando la mejor opción disponible, marcada con fallback=true para que el render use
-  // un mensaje distinto y deje claro que la coincidencia es baja.
-  return { items: ranked.slice(0, 1), fallback: true };
+  const relevantes = ranked.filter(r => r.porcentaje >= MINIMO_PORCENTAJE_RELEVANTE);
+
+  // Caso B: hay recetas relevantes (>= 20%). Mostramos hasta 5.
+  if (relevantes.length > 0) {
+    return { items: relevantes.slice(0, 5), fallback: false, sinCoincidencia: false };
+  }
+
+  // Caso C: hay coincidencia real (> 0%) pero ninguna supera el umbral de 20%.
+  // Mantenemos la regla de "nunca pantalla vacía" mostrando la mejor disponible
+  // con un mensaje que aclara que es una aproximación.
+  return { items: ranked.slice(0, 1), fallback: true, sinCoincidencia: false };
 }
 
 // ─── Renderizado de resultados ────────────────────────────────────────────────
@@ -73,9 +82,14 @@ function crearBotonFavorito(receta) {
   return btn;
 }
 
-function mostrarResultados({ items, fallback }) {
+function mostrarResultados({ items, fallback, sinCoincidencia }) {
   const contenedor = document.getElementById("resultados");
   contenedor.innerHTML = "";
+
+  if (sinCoincidencia) {
+    contenedor.innerHTML = `<p class="mensaje mensaje-fallback">No encontramos una receta con buena coincidencia. Prueba con otros ingredientes.</p>`;
+    return;
+  }
 
   if (items.length === 0) {
     contenedor.innerHTML = `<p class="mensaje">Escribe al menos un ingrediente para empezar 🍳</p>`;
