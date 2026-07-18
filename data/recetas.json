@@ -208,5 +208,105 @@
       "Agregar el pollo sellado, zanahoria y un poco de agua, cocinar tapado.",
       "Anadir arveja al final y servir con arroz."
     ]
+  },
+  {
+    "id": "arroz-con-huevo-frito",
+    "nombre": "Arroz con Huevo Frito",
+    "ingredientes": ["arroz", "huevo", "aceite"],
+    "tiempo_min": 15,
+    "porciones": 2,
+    "dificultad": "Facil",
+    "pasos": [
+      "Cocinar el arroz blanco graneado.",
+      "Calentar aceite en un sarten a fuego medio.",
+      "Freir el huevo dejando la yema semi liquida.",
+      "Servir el huevo frito sobre el arroz caliente."
+    ]
+  },
+  {
+    "id": "pescado-frito-con-arroz",
+    "nombre": "Pescado Frito con Arroz",
+    "ingredientes": ["pescado", "limon", "arroz", "ajo"],
+    "tiempo_min": 30,
+    "porciones": 3,
+    "dificultad": "Facil",
+    "pasos": [
+      "Sazonar el pescado con sal, pimienta y ajo molido.",
+      "Freir el pescado en aceite caliente hasta dorar por ambos lados.",
+      "Exprimir limon sobre el pescado antes de servir.",
+      "Acompañar con arroz blanco."
+    ]
+  },
+  {
+    "id": "jalea-de-pescado",
+    "nombre": "Jalea de Pescado",
+    "ingredientes": ["pescado", "limon", "yuca", "cebolla", "aji amarillo"],
+    "tiempo_min": 40,
+    "porciones": 4,
+    "dificultad": "Media",
+    "pasos": [
+      "Cortar el pescado en trozos y sazonar con limon, sal y pimienta.",
+      "Freir la yuca en trozos hasta dorar.",
+      "Pasar el pescado por harina y freir hasta dorar.",
+      "Preparar una salsa criolla con cebolla y aji amarillo en rodajas.",
+      "Servir el pescado frito con la yuca y la salsa criolla encima."
+    ]
+  },
+  {
+    "id": "arroz-con-mariscos",
+    "nombre": "Arroz con Mariscos",
+    "ingredientes": ["mariscos", "arroz", "aji amarillo", "cebolla", "ajo", "culantro"],
+    "tiempo_min": 45,
+    "porciones": 4,
+    "dificultad": "Media",
+    "pasos": [
+      "Sofreir cebolla, ajo y aji amarillo licuado.",
+      "Agregar los mariscos y saltear brevemente.",
+      "Incorporar el arroz y un poco de caldo de pescado.",
+      "Cocinar tapado a fuego bajo hasta que el arroz este listo.",
+      "Terminar con culantro picado antes de servir."
+    ]
+  },
+  {
+    "id": "menestron-con-arroz",
+    "nombre": "Menestron con Arroz",
+    "ingredientes": ["zapallo", "zanahoria", "papa", "poroto verde", "arroz"],
+    "tiempo_min": 35,
+    "porciones": 4,
+    "dificultad": "Facil",
+    "pasos": [
+      "Cortar el zapallo, la zanahoria, la papa y el poroto verde en trozos.",
+      "Hervir las verduras en agua con sal hasta que esten suaves.",
+      "Sazonar con hierbas al gusto.",
+      "Servir el menestron acompanado de arroz blanco aparte."
+    ]
+  },
+  {
+    "id": "salchipapa-casera",
+    "nombre": "Salchipapa Casera",
+    "ingredientes": ["papa", "salchicha", "aceite"],
+    "tiempo_min": 20,
+    "porciones": 2,
+    "dificultad": "Facil",
+    "pasos": [
+      "Cortar las papas en bastones y freir hasta dorar.",
+      "Cortar la salchicha en rodajas y freir brevemente.",
+      "Mezclar las papas fritas con la salchicha.",
+      "Servir caliente, opcionalmente con salsas al gusto."
+    ]
+  },
+  {
+    "id": "pollo-al-ajo-con-arroz",
+    "nombre": "Pollo al Ajo con Arroz",
+    "ingredientes": ["pollo", "ajo", "arroz", "aceite"],
+    "tiempo_min": 25,
+    "porciones": 3,
+    "dificultad": "Facil",
+    "pasos": [
+      "Sazonar el pollo con ajo molido, sal y pimienta.",
+      "Dorar el pollo en aceite caliente por ambos lados.",
+      "Bajar el fuego y cocinar tapado hasta que este bien cocido.",
+      "Servir con arroz blanco."
+    ]
   }
 ]
