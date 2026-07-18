@@ -308,5 +308,19 @@
       "Bajar el fuego y cocinar tapado hasta que este bien cocido.",
       "Servir con arroz blanco."
     ]
+  },
+  {
+    "id": "arroz-con-atun",
+    "nombre": "Arroz con Atún",
+    "ingredientes": ["atun", "arroz", "cebolla", "limon"],
+    "tiempo_min": 20,
+    "porciones": 2,
+    "dificultad": "Facil",
+    "pasos": [
+      "Cocinar el arroz blanco graneado.",
+      "Picar la cebolla en cuadritos pequeños.",
+      "Mezclar el atun escurrido con la cebolla picada y un chorrito de limon.",
+      "Servir la mezcla de atun sobre el arroz caliente."
+    ]
   }
 ]
